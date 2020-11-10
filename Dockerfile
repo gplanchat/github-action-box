@@ -66,6 +66,7 @@ RUN set -ex\
 
 #COPY config/memory.ini /usr/local/etc/php/conf.d/memory.ini
 #COPY config/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY phar.ini /usr/local/etc/php/conf.d/phar.ini
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
