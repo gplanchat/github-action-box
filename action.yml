@@ -1,15 +1,10 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+name: 'Box Packager for Phar'
+description: 'A Github action running box-project to build .phar packages'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  phar:
+    description: 'The Phar package built'
+  pubkey:
+    description: 'The public key used to sign the Phar package'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}

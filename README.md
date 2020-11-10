@@ -1,23 +1,25 @@
-# Hello world docker action
+# A Github action running box-project to build .phar packages
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+This Github action runs the box-project packager to build .phar packages from your existing PHP applications.
 
 ## Inputs
 
-### `who-to-greet`
+### `secret-key`
 
 **Required** The name of the person to greet. Default `"World"`.
 
 ## Outputs
 
-### `time`
-
-The time we greeted you.
+Nothing
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+- uses: gplanchat/github-action-box@master
+  env:
+    BOX_SECRET_KEY: ${{secrets.BOX_SECRET_KEY}}
+    BOX_SECRET_KEY_PASSPHRASE: ${{secrets.BOX_SECRET_KEY_PASSPHRASE}}
+  with:
+    secret-key: kloud-private.pem
+    secret-key-passphrase: kloud-private.passphrase
 ```

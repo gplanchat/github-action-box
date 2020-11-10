@@ -1,0 +1,29 @@
+{
+    "chmod": "0755",
+    "main": "bin/kloud",
+    "output": "kloud.phar",
+    "directories": [
+        "src",
+        "compose",
+        "environments"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "in": "config"
+        },
+        {
+            "name": "*.php",
+            "exclude": ["test", "tests"],
+            "in": "vendor"
+        },
+        {
+            "followLinks": true,
+            "ignoreDotFiles": false,
+            "in": "environments"
+        }
+    ],
+    "algorithm": "OPENSSL",
+    "key": "kloud-private.pem",
+    "stub": true
+}
