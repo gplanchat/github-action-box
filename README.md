@@ -19,7 +19,4 @@ Nothing
   env:
     BOX_SECRET_KEY: ${{secrets.BOX_SECRET_KEY}}
     BOX_SECRET_KEY_PASSPHRASE: ${{secrets.BOX_SECRET_KEY_PASSPHRASE}}
-  with:
-    secret-key: kloud-private.pem
-    secret-key-passphrase: kloud-private.passphrase
 ```
